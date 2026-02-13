@@ -96,7 +96,7 @@
 <!-- Inner White Border/Matte -->
 <div class="w-full h-full bg-background-darker rounded-lg overflow-hidden relative border border-white/5">
 <!-- Image -->
-<img alt="Couple enjoying coffee in a cozy cafe with warm lighting" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100" data-alt="Couple enjoying coffee in a cozy cafe with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9hEURnVgo72uKy8CteCa9bPyzwAmBIPNbUwM6LWlTudWWhGsfPz6SjwNysunAL312y9yCq4zV0oJSpwZX9YoSrRkX5T_xQVgKvykIAH6b9IDhCE5w7arK-viGsNhglBWi8JSYh_shFxGhll_7orlOzhy6jODe9bacGfUmaKZcEI0oPHuTD0cUKPOd5wkFl0Nz74UxbdDWQ0LvVLUsLI0dkoBZzAgVETDt1m7fQYVCTvHROLwnlLUtL8iXJQSwcYWLkziavlF2VUk"/>
+<img id="current-photo" alt="Photo memory" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100" src="images/FullSizeRender.jpeg"/>
 <!-- Texture Overlay on Image -->
 <div class="absolute inset-0 paper-texture pointer-events-none mix-blend-overlay"></div>
 <!-- Vignette -->
@@ -111,20 +111,20 @@
 </div>
 <!-- Caption Area -->
 <div class="mt-8 w-full text-center px-4">
-<p class="text-white/90 text-lg font-serif italic leading-relaxed">
-                    "Remembering how the light hit your face at that little cafe in Paris. It was the exact moment I knew."
+<p id="photo-caption" class="text-white/90 text-lg font-serif italic leading-relaxed">
+                    "Every picture tells a story..."
                 </p>
 <div class="mt-3 flex items-center justify-center gap-2">
 <span class="h-px w-8 bg-primary/40"></span>
-<span class="text-white/40 text-xs uppercase tracking-widest font-display">October 14th</span>
+<span id="photo-date" class="text-white/40 text-xs uppercase tracking-widest font-display">Moments</span>
 <span class="h-px w-8 bg-primary/40"></span>
 </div>
 </div>
 <!-- Navigation Chevrons (Absolute positioned for ease of reach) -->
-<button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 flex items-center justify-center text-white/20 hover:text-primary transition-colors hover:bg-white/5 rounded-full">
+<button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 flex items-center justify-center text-white/20 hover:text-primary transition-colors hover:bg-white/5 rounded-full">
 <span class="material-icons-round text-3xl">chevron_left</span>
 </button>
-<button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 flex items-center justify-center text-white/50 hover:text-primary transition-colors hover:bg-white/5 rounded-full animate-pulse">
+<button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 flex items-center justify-center text-white/50 hover:text-primary transition-colors hover:bg-white/5 rounded-full animate-pulse">
 <span class="material-icons-round text-3xl">chevron_right</span>
 </button>
 </div>
@@ -141,7 +141,7 @@
 </div>
 <div class="flex justify-between items-center w-full text-xs font-medium text-white/40 font-display">
 <span>Part I</span>
-<span>Page 1 of 12</span>
+<span id="page-counter">Page 1 of 22</span>
 <span>Part II</span>
 </div>
 </div>
@@ -150,6 +150,68 @@
 <!-- Overlay texture for whole screen grain -->
 <div class="fixed inset-0 pointer-events-none opacity-[0.03] z-50 paper-texture mix-blend-overlay"></div>
 <script>
+    // List of images
+        const photos = [
+            "images/FullSizeRender.jpeg",
+            "images/IMG_3216.jpeg",
+            "images/IMG_3585.jpeg",
+            "images/IMG_3613.jpeg",
+            "images/IMG_3644.jpeg",
+            "images/IMG_3827.jpeg",
+            "images/IMG_3933.jpeg",
+            "images/IMG_3935.jpeg",
+            "images/IMG_4101.jpeg",
+            "images/IMG_4153.jpeg",
+            "images/IMG_4168.jpeg",
+            "images/IMG_4243 (1).jpeg",
+            "images/IMG_4243.jpeg",
+            "images/IMG_4246.jpeg",
+            "images/IMG_4901.jpeg",
+            "images/IMG_4935.jpeg",
+            "images/IMG_4992.jpeg",
+            "images/IMG_5040 (1).jpeg",
+            "images/IMG_5085.jpeg",
+            "images/IMG_5092.jpeg",
+            "images/IMG_5101.jpeg",
+            "images/IMG_6192.jpeg"
+        ];
+        
+        let currentIndex = 0;
+        
+        const photoImg = document.getElementById('current-photo');
+        const pageCounter = document.getElementById('page-counter');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        function updatePhoto(index) {
+            photoImg.style.opacity = '0';
+            setTimeout(() => {
+                photoImg.src = photos[index];
+                photoImg.style.opacity = '1'; // Restore opacity
+                // Actually need to ensure the class opacity-90 is handled or overridden?
+                // The class has opacity-90, let's keep it consistent with CSS or just let CSS handle hover
+                // The fade out/in effect is manually done here.
+                photoImg.onload = () => {
+                     photoImg.classList.remove('opacity-0');
+                };
+            }, 300);
+            
+            pageCounter.textContent = `Page ${index + 1} of ${photos.length}`;
+            
+            // Update button states if needed (e.g., disable at ends, or loop)
+            // We will loop for now as it's often nicer
+        }
+
+        prevBtn.addEventListener('click', () => {
+             currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+             updatePhoto(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+             currentIndex = (currentIndex + 1) % photos.length;
+             updatePhoto(currentIndex);
+        });
+
         // Simple script to handle heart animation toggle
         const heartBtn = document.querySelector('button .material-icons-round:contains("favorite")').parentElement;
         heartBtn.addEventListener('click', function() {
