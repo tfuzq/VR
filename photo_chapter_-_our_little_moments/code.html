@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photo Chapter - Our Little Moments</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script type='text/javascript' nonce='drJ3s4pTrR5E9O+nzWYhyg==' src='https://contribution.usercontent.google.com/W4DAq6k9T3X6_DkCweKNozPq8-xbRJN2EfVLpI6pSbTOubU5Sqd9qCcMDNjbmgnGUdLZCr66ToHmeRg6BQzLgikqztUwS5ZNNUXWFEUTonKP8IBEIZqEJrYnRrFiZL5v6Te3XiATZk1Uz9XLUTKch_INceOmrIG4TrQlXaMhYwh6kAMEkWNAF63bCzDLeqW_uCMDxTYV4xBHWeTEEtTeA5uaj8uQ0ZHOfmEhXgiwoyXTA6RvghNPLqiiG2zywRyI1GPLL4OVWwrst4COMAGgq73xw3-A1I-X8SVkfE0PFFS4IQxHmDwXqDSJiHI5i7ifgIp74Nv48E5KOlhMKdubH8eYsvNFco8c0ltKYgyQBxALtjFteuWK4KXoT42ramRPILJZyoxYLPNtXCU7tilNKQXipAtJn1GoAlbmN1o856BXW7-RZ4ProzEZHSmWgQ_V52C3vFPto3rsq7VwqkXoY_Yw_6gK5fd2ii6WOAdqR49JGpuhu9vzWCAudmvb2JxeSi0Z8iGKN5CZYwNbLA1Lzo8lWBRQAu8WU0aKeEsXssO8ZnxoEDuu6xZNQ4S70ecWC4C1C8sKoBZ9Gu0awg5jAbylL1SMGFiI_j6gYhjqg10jgb054aJkU_Csr4brx40Ti2QIkacoIh1qtQqI2X-JiNHt_CSf6Jh9eq1LHv1IyN3iuH9D2vj0MP7vnmXiBjbQrdwPPbg2UXIxBrCYcW8-bPEjMdsOXFJBNSR8AbYy2AGO4YdNWlLisopts0tI_g1sbkRiBQfSVSl2-qln3wAH9pZml1fMM1uD0iP04g'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019", // Deep wine/charcoal
+                        "background-darker": "#1a0c13", // Even darker for contrast
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backgroundImage: {
+                        'sparkles': "radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Sparkle Background Animation Setup */
+        .stars-bg {
+            background-color: #221019;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(238, 43, 140, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 20%, rgba(238, 43, 140, 0.05) 0%, transparent 20%);
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Paper texture overlay */
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+        
+        .photo-shadow {
+            box-shadow: 
+                0 20px 25px -5px rgba(0, 0, 0, 0.4), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased h-screen w-full overflow-hidden flex flex-col relative selection:bg-primary selection:text-white">
+<!-- Background Elements -->
+<div class="fixed inset-0 stars-bg z-0">
+<!-- Static Stars for atmosphere -->
+<div class="star w-1 h-1 top-12 left-8 opacity-40"></div>
+<div class="star w-0.5 h-0.5 top-24 right-12 opacity-60"></div>
+<div class="star w-1 h-1 bottom-32 left-1/4 opacity-30"></div>
+<div class="star w-0.5 h-0.5 top-1/3 right-8 opacity-50"></div>
+</div>
+<!-- Main Content Container -->
+<main class="relative z-10 flex-1 flex flex-col h-full max-w-md mx-auto w-full p-6 pb-safe">
+<!-- Header: Chapter Navigation -->
+<header class="flex justify-between items-center py-4 mb-2">
+<button class="flex items-center gap-2 text-white/60 hover:text-white transition-colors group">
+<span class="material-icons-round text-xl group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="text-sm font-medium tracking-wide uppercase">Contents</span>
+</button>
+<div class="flex flex-col items-end">
+<span class="text-primary text-xs font-bold tracking-widest uppercase mb-0.5">Chapter 1</span>
+<h1 class="text-white text-lg font-serif italic leading-tight">Our Little Moments</h1>
+</div>
+</header>
+<!-- Photo Card Area -->
+<div class="flex-1 flex flex-col justify-center items-center py-4 relative">
+<!-- The Photo Frame -->
+<div class="relative w-full aspect-[3/4] max-h-[65vh] bg-white/5 backdrop-blur-sm rounded-xl p-4 photo-shadow border border-white/10 group">
+<!-- Inner White Border/Matte -->
+<div class="w-full h-full bg-background-darker rounded-lg overflow-hidden relative border border-white/5">
+<!-- Image -->
+<img alt="Couple enjoying coffee in a cozy cafe with warm lighting" class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100" data-alt="Couple enjoying coffee in a cozy cafe with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9hEURnVgo72uKy8CteCa9bPyzwAmBIPNbUwM6LWlTudWWhGsfPz6SjwNysunAL312y9yCq4zV0oJSpwZX9YoSrRkX5T_xQVgKvykIAH6b9IDhCE5w7arK-viGsNhglBWi8JSYh_shFxGhll_7orlOzhy6jODe9bacGfUmaKZcEI0oPHuTD0cUKPOd5wkFl0Nz74UxbdDWQ0LvVLUsLI0dkoBZzAgVETDt1m7fQYVCTvHROLwnlLUtL8iXJQSwcYWLkziavlF2VUk"/>
+<!-- Texture Overlay on Image -->
+<div class="absolute inset-0 paper-texture pointer-events-none mix-blend-overlay"></div>
+<!-- Vignette -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Decorative elements mimicking tape or corner holders -->
+<div class="absolute -top-1 -right-1 w-16 h-16 bg-gradient-to-br from-white/10 to-transparent rotate-45 transform translate-x-4 -translate-y-4 pointer-events-none blur-sm"></div>
+<!-- Like Interaction (Floating) -->
+<button class="absolute -bottom-5 right-6 bg-background-dark border border-primary/30 rounded-full p-3 shadow-lg shadow-black/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 group/heart active:scale-90">
+<span class="material-icons-round text-xl group-hover/heart:animate-pulse">favorite</span>
+</button>
+</div>
+<!-- Caption Area -->
+<div class="mt-8 w-full text-center px-4">
+<p class="text-white/90 text-lg font-serif italic leading-relaxed">
+                    "Remembering how the light hit your face at that little cafe in Paris. It was the exact moment I knew."
+                </p>
+<div class="mt-3 flex items-center justify-center gap-2">
+<span class="h-px w-8 bg-primary/40"></span>
+<span class="text-white/40 text-xs uppercase tracking-widest font-display">October 14th</span>
+<span class="h-px w-8 bg-primary/40"></span>
+</div>
+</div>
+<!-- Navigation Chevrons (Absolute positioned for ease of reach) -->
+<button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 flex items-center justify-center text-white/20 hover:text-primary transition-colors hover:bg-white/5 rounded-full">
+<span class="material-icons-round text-3xl">chevron_left</span>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 flex items-center justify-center text-white/50 hover:text-primary transition-colors hover:bg-white/5 rounded-full animate-pulse">
+<span class="material-icons-round text-3xl">chevron_right</span>
+</button>
+</div>
+<!-- Bottom Navigation / Pagination -->
+<footer class="mt-auto pt-6 pb-2">
+<div class="flex flex-col items-center gap-4">
+<!-- Progress Indicator -->
+<div class="flex items-center gap-1.5">
+<div class="h-1 w-6 rounded-full bg-primary shadow-[0_0_8px_rgba(238,43,140,0.6)]"></div>
+<div class="h-1 w-1.5 rounded-full bg-white/20"></div>
+<div class="h-1 w-1.5 rounded-full bg-white/20"></div>
+<div class="h-1 w-1.5 rounded-full bg-white/20"></div>
+<div class="h-1 w-1.5 rounded-full bg-white/20"></div>
+</div>
+<div class="flex justify-between items-center w-full text-xs font-medium text-white/40 font-display">
+<span>Part I</span>
+<span>Page 1 of 12</span>
+<span>Part II</span>
+</div>
+</div>
+</footer>
+</main>
+<!-- Overlay texture for whole screen grain -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-50 paper-texture mix-blend-overlay"></div>
+<script>
+        // Simple script to handle heart animation toggle
+        const heartBtn = document.querySelector('button .material-icons-round:contains("favorite")').parentElement;
+        heartBtn.addEventListener('click', function() {
+            const icon = this.querySelector('span');
+            if (this.classList.contains('bg-primary')) {
+                // Unlike state
+                this.classList.remove('bg-primary', 'text-white');
+                this.classList.add('bg-background-dark', 'text-primary');
+                icon.textContent = 'favorite_border';
+            } else {
+                // Like state
+                this.classList.add('bg-primary', 'text-white');
+                this.classList.remove('bg-background-dark', 'text-primary');
+                icon.textContent = 'favorite';
+            }
+        });
+    </script>
+</body></html>
