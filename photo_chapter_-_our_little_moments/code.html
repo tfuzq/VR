@@ -183,19 +183,16 @@
             "images/IMG_3585.jpeg",
             "images/IMG_3613.jpeg",
             "images/IMG_3644.jpeg",
-            "images/IMG_3827.jpeg",
             "images/IMG_3933.jpeg",
             "images/IMG_3935.jpeg",
             "images/IMG_4101.jpeg",
             "images/IMG_4153.jpeg",
             "images/IMG_4168.jpeg",
-            "images/IMG_4243 (1).jpeg",
             "images/IMG_4243.jpeg",
             "images/IMG_4246.jpeg",
             "images/IMG_4901.jpeg",
             "images/IMG_4935.jpeg",
             "images/IMG_4992.jpeg",
-            "images/IMG_5040 (1).jpeg",
             "images/IMG_5085.jpeg",
             "images/IMG_5092.jpeg",
             "images/IMG_5101.jpeg",
@@ -254,6 +251,45 @@
                 icon.textContent = 'favorite';
             }
         });
+    </script>
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href && href !== '#') {
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 800);
+                }
+            });
+        });
+
+        window.originalLocation = window.location;
+        window.location = {
+            ...window.location,
+            set href(url) {
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.originalLocation.href = url;
+                }, 800);
+            }
+        };
     </script>
 </body>
 
