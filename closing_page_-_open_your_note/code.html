@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Open Your Note - Ruby</title>
-<!-- Tailwind CSS -->
-<script type='text/javascript' nonce='vKqazJCRoTMEh5tfmw+8jw==' src='https://contribution.usercontent.google.com/f9XegK_NcaoQ83BjOvMddKlIrnrGab8PpqwxDFblkgGZG97ilrkfA9_2blgWGAsfU4HiyyJVvEUHThbTIK_P8klIB_bUXe4xJXyjoDScYQIfrsAdHDohJ70-HoDNE1QHn8zDtzqMOTDgzfCi3oUmzSof5PONlaHQZ_ha-YbPd5AI4KnvP5fofBg7llEK_jzg22eZ1aKkJiMK5AIlyls60BTqcX9YZiB7PxA5YrqwDtZC4N09peTojovCwIs3FQIFUKqTYXg6Rpq8Glfd9fo0VGYbdmsv_GPvDVBTf-0I43h8-7cKkX1_Jebgpc3yVGHVnYySG2e0W4fahM22pBz3om0QTNmFMSMwAplo6fvyzLjP5-6kp6MCe5jQtTTag4Ry4psHCQWdrkshDLpw_RtJ4mxye2CC0pqBiasBhI-ESfTK_1ma60STr_Z8BYDU3XkUnmBYAuWvLvQI2jyjBnk-NmKfzheVXQICuKCTOpTXwn7bI3q8aLkoJf1M3lYa74t5Zb1JEJmDGQX2sotwNsQntKhy-Wi7K18IlBngFeI_1TFTyE7Ye1sGPWPA_BW0IseO-6SesSu2Dxnp3xP52i29SlfgkQvWKzQgRNXKdVUVBbiDCDylhI_hhJbzLreXXBnPtfxtawJYObxyKEAYSVzgZ5rUZK_9zqOs8yEswOIjA4EjQEkf9GjM5oSeZmeL-Evjgdo_7imTfCxmeo_dNlMY5Z2DtTTniqYqDfekziw-pItRP36gHXBTht1TFSrtuNNaTwFh0TCXEK3ixTqoMTvcDcHtsCxqiSv87ddpOw'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Fonts: Inter for UI, Playfair Display for Serif Headline -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
-<!-- Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Theme Configuration -->
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Open Your Note - Ruby</title>
+    <!-- Tailwind CSS -->
+    <script type='text/javascript' nonce='vKqazJCRoTMEh5tfmw+8jw=='
+        src='https://contribution.usercontent.google.com/f9XegK_NcaoQ83BjOvMddKlIrnrGab8PpqwxDFblkgGZG97ilrkfA9_2blgWGAsfU4HiyyJVvEUHThbTIK_P8klIB_bUXe4xJXyjoDScYQIfrsAdHDohJ70-HoDNE1QHn8zDtzqMOTDgzfCi3oUmzSof5PONlaHQZ_ha-YbPd5AI4KnvP5fofBg7llEK_jzg22eZ1aKkJiMK5AIlyls60BTqcX9YZiB7PxA5YrqwDtZC4N09peTojovCwIs3FQIFUKqTYXg6Rpq8Glfd9fo0VGYbdmsv_GPvDVBTf-0I43h8-7cKkX1_Jebgpc3yVGHVnYySG2e0W4fahM22pBz3om0QTNmFMSMwAplo6fvyzLjP5-6kp6MCe5jQtTTag4Ry4psHCQWdrkshDLpw_RtJ4mxye2CC0pqBiasBhI-ESfTK_1ma60STr_Z8BYDU3XkUnmBYAuWvLvQI2jyjBnk-NmKfzheVXQICuKCTOpTXwn7bI3q8aLkoJf1M3lYa74t5Zb1JEJmDGQX2sotwNsQntKhy-Wi7K18IlBngFeI_1TFTyE7Ye1sGPWPA_BW0IseO-6SesSu2Dxnp3xP52i29SlfgkQvWKzQgRNXKdVUVBbiDCDylhI_hhJbzLreXXBnPtfxtawJYObxyKEAYSVzgZ5rUZK_9zqOs8yEswOIjA4EjQEkf9GjM5oSeZmeL-Evjgdo_7imTfCxmeo_dNlMY5Z2DtTTniqYqDfekziw-pItRP36gHXBTht1TFSrtuNNaTwFh0TCXEK3ixTqoMTvcDcHtsCxqiSv87ddpOw'></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Fonts: Inter for UI, Playfair Display for Serif Headline -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -28,12 +36,12 @@
                         "display": ["Inter", "sans-serif"],
                         "serif": ["Playfair Display", "serif"],
                     },
-                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         /* Custom styles to augment Tailwind */
         .glass-panel {
             background: rgba(34, 16, 25, 0.4);
@@ -42,14 +50,25 @@
             border: 1px solid rgba(238, 43, 140, 0.15);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
-        
+
         /* Subtle animation for background glow */
         @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-            50% { transform: translate(10px, -15px) scale(1.1); opacity: 0.6; }
-            100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translate(10px, -15px) scale(1.1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
         }
-        
+
         .animate-drift-slow {
             animation: drift 8s ease-in-out infinite;
         }
@@ -60,69 +79,101 @@
 
         /* Heartbeat animation */
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            14% { transform: scale(1.1); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.1); }
-            70% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.1);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.1);
+            }
+
+            70% {
+                transform: scale(1);
+            }
         }
 
         .animate-heartbeat {
             animation: heartbeat 2s linear infinite;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen flex flex-col relative overflow-hidden">
-<!-- Ambient Background Glows -->
-<div class="fixed inset-0 pointer-events-none z-0">
-<!-- Top Left Glow -->
-<div class="absolute -top-20 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-[80px] animate-drift-slow"></div>
-<!-- Bottom Right Glow -->
-<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/30 rounded-full blur-[100px] animate-drift-slower"></div>
-<!-- Center Subtle Glow -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[60px]"></div>
-</div>
-<!-- Main Content Container -->
-<main class="relative z-10 flex-grow flex items-center justify-center p-6 h-screen">
-<!-- Glass Card Component -->
-<div class="glass-panel w-full max-w-md p-10 rounded-xl text-center flex flex-col items-center gap-8 relative overflow-hidden">
-<!-- Top Decoration: Subtle line or accent -->
-<div class="w-12 h-1 bg-primary/40 rounded-full mx-auto mb-2"></div>
-<!-- Content Group -->
-<div class="space-y-6">
-<!-- Primary Title -->
-<h1 class="font-serif text-4xl md:text-5xl leading-tight text-white drop-shadow-sm font-medium">
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen flex flex-col relative overflow-hidden">
+    <!-- Ambient Background Glows -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <!-- Top Left Glow -->
+        <div class="absolute -top-20 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-[80px] animate-drift-slow">
+        </div>
+        <!-- Bottom Right Glow -->
+        <div
+            class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/30 rounded-full blur-[100px] animate-drift-slower">
+        </div>
+        <!-- Center Subtle Glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[60px]">
+        </div>
+    </div>
+    <!-- Main Content Container -->
+    <main class="relative z-10 flex-grow flex items-center justify-center p-6 h-screen">
+        <!-- Glass Card Component -->
+        <div
+            class="glass-panel w-full max-w-md p-10 rounded-xl text-center flex flex-col items-center gap-8 relative overflow-hidden">
+            <!-- Top Decoration: Subtle line or accent -->
+            <div class="w-12 h-1 bg-primary/40 rounded-full mx-auto mb-2"></div>
+            <!-- Content Group -->
+            <div class="space-y-6">
+                <!-- Primary Title -->
+                <h1 class="font-serif text-4xl md:text-5xl leading-tight text-white drop-shadow-sm font-medium">
                     Okay… now open your note <span class="align-middle text-3xl">💌</span>
-</h1>
-<!-- Divider / Ornament -->
-<div class="flex items-center justify-center gap-3 opacity-50">
-<div class="h-[1px] w-8 bg-gradient-to-r from-transparent to-primary"></div>
-<span class="text-primary text-xs tracking-[0.2em] uppercase font-light">The Final Step</span>
-<div class="h-[1px] w-8 bg-gradient-to-l from-transparent to-primary"></div>
-</div>
-<!-- Secondary Text -->
-<p class="text-white/70 text-base md:text-lg font-light leading-relaxed">
+                </h1>
+                <!-- Divider / Ornament -->
+                <div class="flex items-center justify-center gap-3 opacity-50">
+                    <div class="h-[1px] w-8 bg-gradient-to-r from-transparent to-primary"></div>
+                    <span class="text-primary text-xs tracking-[0.2em] uppercase font-light">The Final Step</span>
+                    <div class="h-[1px] w-8 bg-gradient-to-l from-transparent to-primary"></div>
+                </div>
+                <!-- Secondary Text -->
+                <p class="text-white/70 text-base md:text-lg font-light leading-relaxed">
                     Don’t read it early — open it properly <span class="inline-block ml-1">😌</span>
-</p>
-</div>
-<!-- Bottom Anchor Icon -->
-<div class="mt-4">
-<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 animate-heartbeat">
-<span class="material-icons text-primary text-xl">favorite</span>
-</div>
-</div>
-<!-- Decorative corner accent -->
-<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-3xl -mr-2 -mt-2 pointer-events-none"></div>
-<div class="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-primary/10 to-transparent rounded-tr-3xl -ml-2 -mb-2 pointer-events-none"></div>
-</div>
-</main>
-<!-- Optional Footer Credit (Very subtle) -->
-<footer class="absolute bottom-4 w-full text-center z-10 opacity-30 pointer-events-none">
-<p class="text-[10px] tracking-widest text-primary font-light uppercase">Made with love for Ruby</p>
-</footer>
-</body></html>
+                </p>
+            </div>
+            <!-- Bottom Anchor Icon -->
+            <div class="mt-4">
+                <div
+                    class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 animate-heartbeat">
+                    <span class="material-icons text-primary text-xl">favorite</span>
+                </div>
+            </div>
+            <!-- Decorative corner accent -->
+            <div
+                class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-3xl -mr-2 -mt-2 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-primary/10 to-transparent rounded-tr-3xl -ml-2 -mb-2 pointer-events-none">
+            </div>
+        </div>
+    </main>
+    <!-- Optional Footer Credit (Very subtle) -->
+    <footer class="absolute bottom-4 w-full text-center z-10 opacity-50 pointer-events-auto">
+        <p class="text-[10px] tracking-widest text-primary font-light uppercase mb-1">Made with love for Ruby</p>
+        <a href="../index.html"
+            class="text-[10px] text-white/50 hover:text-white transition-colors uppercase tracking-widest border-b border-transparent hover:border-white/50 pb-0.5">Read
+            Again</a>
+    </footer>
+</body>
+
+</html>

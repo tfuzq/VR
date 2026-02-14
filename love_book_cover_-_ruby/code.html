@@ -1,164 +1,221 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>For Ruby - Love Book Cover</title>
-<!-- Tailwind CSS -->
-<script type='text/javascript' nonce='gKDPfrhK6EkfymFnbUrY7g==' src='https://contribution.usercontent.google.com/WU8Em2qJxJ6FIA7-4ZH_9PecrjINZsQtQQhHbG4eqYJmE0dEXQE78nWWVzxPwESRJWrGg-PIxvQTNpb-QswfbLaDGLdBtajc5l3yatw8IqF7n2ad-W7aHH4aVThF1uU1NPGQA0osSXRSsAl4p-ecnk6cTR4xBtMyVEbFdUHFYAO3KbmcJxdu26c3no3HMolE3dT_-lsUyof4HOTFT4VwoWuF4MgEBgR6GWzss1gckcXHGj62lvVYkRVelcPnavLKRDg0TAMv8xuWYukIccwbpX1_5a7pafniZboizUwaMb3lMhTvSZMVqqRTpIXQxtr6Bo0bjSmdNew5Rnaq6bZkgpWmyNfdHGnbnnV6KYr871enQgQNXhOnS3NwxCB5GrlTy3774ALrJmeOXRNEZPWjHHYVnDDCFdSBTgphyIZXZHM6c8BOeMIZdE46Tg26v9Ce7GiESRmbY3MjqP1cgG1zhJ6yQaf7VZBr7xFGlcLHlemu7GTIazHUnDtPHau4tFNul8MeNWK8mrQk3rKMJpeliTHmPtoyxfX7h18Squw7iysi-CeSN5UFlY8-0yhGihFYdN5brkEYLeqhQZ5zyaAvYKRCCQdDG9xvbwnm6yJ4ZNvF1M6e5TZLdL0sV9xuUBMkir_lRRof4G94gDhDCfC5xuqpZJxjXKCqaehX4H555PafNgthtWV3e6Ojecdr6zirRK9m8ZV1blz40SVd4bHotfaemLHyYQZIgQFQIxDgY9RFAJ9HhxlhHmayTWU4OrXNBvuHjzL6iUsH2wyalf06qmMqE37XRtSuqgOeWA'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Theme Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#ee2b8c",
-              "background-light": "#f8f6f7",
-              "background-dark": "#221019",
-              "glass-dark": "rgba(34, 16, 25, 0.6)",
-              "glass-border": "rgba(238, 43, 140, 0.2)",
-            },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"],
-              "serif": ["Playfair Display", "serif"],
-            },
-            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
-            animation: {
-                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-                float: {
-                    '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-10px)' },
-                }
-            }
-          },
-        },
-      }
-    </script>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        /* Custom Bokeh Effect */
-        .bokeh {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .bokeh span {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(238, 43, 140, 0.15) 0%, rgba(238, 43, 140, 0) 70%);
-            animation: float 10s infinite linear;
-        }
-        .bokeh span:nth-child(1) { width: 300px; height: 300px; top: -50px; left: -50px; animation-duration: 15s; }
-        .bokeh span:nth-child(2) { width: 200px; height: 200px; top: 40%; right: -20px; animation-duration: 12s; animation-delay: 2s; }
-        .bokeh span:nth-child(3) { width: 150px; height: 150px; bottom: 10%; left: 20%; animation-duration: 18s; animation-delay: 1s; }
-        .bokeh span:nth-child(4) { width: 250px; height: 250px; top: 10%; right: 30%; animation-duration: 20s; animation-delay: 5s; }
+<html class="dark" lang="en">
 
-        /* Glassmorphism utility not fully covered by tailwind default */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        
-        .book-spine {
-            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.05) 100%);
-        }
-    </style>
-<style>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>For Ruby - Love Book Cover</title>
+  <!-- Tailwind CSS -->
+  <script type='text/javascript' nonce='gKDPfrhK6EkfymFnbUrY7g=='
+    src='https://contribution.usercontent.google.com/WU8Em2qJxJ6FIA7-4ZH_9PecrjINZsQtQQhHbG4eqYJmE0dEXQE78nWWVzxPwESRJWrGg-PIxvQTNpb-QswfbLaDGLdBtajc5l3yatw8IqF7n2ad-W7aHH4aVThF1uU1NPGQA0osSXRSsAl4p-ecnk6cTR4xBtMyVEbFdUHFYAO3KbmcJxdu26c3no3HMolE3dT_-lsUyof4HOTFT4VwoWuF4MgEBgR6GWzss1gckcXHGj62lvVYkRVelcPnavLKRDg0TAMv8xuWYukIccwbpX1_5a7pafniZboizUwaMb3lMhTvSZMVqqRTpIXQxtr6Bo0bjSmdNew5Rnaq6bZkgpWmyNfdHGnbnnV6KYr871enQgQNXhOnS3NwxCB5GrlTy3774ALrJmeOXRNEZPWjHHYVnDDCFdSBTgphyIZXZHM6c8BOeMIZdE46Tg26v9Ce7GiESRmbY3MjqP1cgG1zhJ6yQaf7VZBr7xFGlcLHlemu7GTIazHUnDtPHau4tFNul8MeNWK8mrQk3rKMJpeliTHmPtoyxfX7h18Squw7iysi-CeSN5UFlY8-0yhGihFYdN5brkEYLeqhQZ5zyaAvYKRCCQdDG9xvbwnm6yJ4ZNvF1M6e5TZLdL0sV9xuUBMkir_lRRof4G94gDhDCfC5xuqpZJxjXKCqaehX4H555PafNgthtWV3e6Ojecdr6zirRK9m8ZV1blz40SVd4bHotfaemLHyYQZIgQFQIxDgY9RFAJ9HhxlhHmayTWU4OrXNBvuHjzL6iUsH2wyalf06qmMqE37XRtSuqgOeWA'></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Theme Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ee2b8c",
+            "background-light": "#f8f6f7",
+            "background-dark": "#221019",
+            "glass-dark": "rgba(34, 16, 25, 0.6)",
+            "glass-border": "rgba(238, 43, 140, 0.2)",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    /* Custom Bokeh Effect */
+    .bokeh {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bokeh span {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(238, 43, 140, 0.15) 0%, rgba(238, 43, 140, 0) 70%);
+      animation: float 10s infinite linear;
+    }
+
+    .bokeh span:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: -50px;
+      left: -50px;
+      animation-duration: 15s;
+    }
+
+    .bokeh span:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      top: 40%;
+      right: -20px;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .bokeh span:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      bottom: 10%;
+      left: 20%;
+      animation-duration: 18s;
+      animation-delay: 1s;
+    }
+
+    .bokeh span:nth-child(4) {
+      width: 250px;
+      height: 250px;
+      top: 10%;
+      right: 30%;
+      animation-duration: 20s;
+      animation-delay: 5s;
+    }
+
+    /* Glassmorphism utility not fully covered by tailwind default */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .book-spine {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.05) 100%);
+    }
+  </style>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen relative overflow-hidden font-display flex flex-col items-center justify-center selection:bg-primary selection:text-white">
-<!-- Ambient Background Effects -->
-<div class="bokeh">
-<span></span><span></span><span></span><span></span>
-</div>
-<!-- Background Gradient Overlay for Depth -->
-<div class="fixed inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-primary/10 pointer-events-none z-0"></div>
-<!-- Main Content Container (Phone Frame) -->
-<main class="w-full max-w-md h-full min-h-screen flex flex-col justify-between p-6 relative z-10">
-<!-- Top Bar: Music Toggle -->
-<header class="w-full flex justify-end pt-4 animate-fade-in-down">
-<button class="glass-panel group flex items-center gap-3 px-4 py-2 rounded-full hover:bg-white/5 transition-all duration-300">
-<span class="text-xs font-medium tracking-wide opacity-80 group-hover:opacity-100 transition-opacity">Play a song</span>
-<div class="relative w-8 h-4 bg-slate-700/50 rounded-full transition-colors group-hover:bg-primary/30">
-<div class="absolute left-0 top-0 w-4 h-4 bg-primary rounded-full shadow-lg transform -translate-y-0 scale-110 flex items-center justify-center">
-<span class="material-icons-round text-[10px] text-white animate-spin-slow">music_note</span>
-</div>
-</div>
-</button>
-</header>
-<!-- Center: The "Book" -->
-<div class="flex-1 flex items-center justify-center perspective-1000 py-8">
-<div class="relative w-full aspect-[3/4] max-w-sm animate-float">
-<!-- Glow behind book -->
-<div class="absolute inset-4 bg-primary/20 blur-3xl rounded-full animate-pulse-slow"></div>
-<!-- Book Card -->
-<article class="glass-panel w-full h-full rounded-xl flex flex-col items-center justify-center text-center p-8 relative overflow-hidden border-t border-l border-white/10 border-b border-r border-black/20 shadow-2xl ring-1 ring-white/5">
-<!-- Decorative corner accents -->
-<div class="absolute top-4 left-4 w-16 h-16 border-t border-l border-primary/20 rounded-tl-lg"></div>
-<div class="absolute top-4 right-4 w-16 h-16 border-t border-r border-primary/20 rounded-tr-lg"></div>
-<div class="absolute bottom-4 left-4 w-16 h-16 border-b border-l border-primary/20 rounded-bl-lg"></div>
-<div class="absolute bottom-4 right-4 w-16 h-16 border-b border-r border-primary/20 rounded-br-lg"></div>
-<!-- Book Spine Effect -->
-<div class="absolute left-0 top-0 bottom-0 w-4 book-spine z-10 opacity-30"></div>
-<!-- Content -->
-<div class="relative z-20 flex flex-col items-center gap-8 w-full">
-<!-- Image/Icon placeholder for cover art -->
-<div class="w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center border border-primary/10 mb-4 shadow-inner relative overflow-hidden">
-<img alt="Abstract Romantic Texture" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Abstract soft focus pink and purple romantic bokeh lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnTAMe39HXltTVH6458js4eIL87CT_9VcIDn6hecqOw2t7EjzmCctgiuUYhZ8Mz1sQ1FAaUGIbfRhS4YbtdxHRrog7ZnDdkFRv6Tl3KM2v_HD340Tb4jAFKxRzpuH8pzZKyHITB25m-rN52TYqjpW25vaQdfBNCXH5Y3dhSh7qAapGx-l1ceGnK1Lc4VAZSdNDX1-KsvRHUYYix1_N8XuRJm_6QiU5WnfUSu1SIoK1g2ayELAOjeXoX8aIQ6j8o2ijg7ISIbZyXcE"/>
-<span class="material-icons-round text-5xl text-primary/80 drop-shadow-lg relative z-10">favorite</span>
-</div>
-<!-- Titles -->
-<div class="space-y-3">
-<h2 class="text-sm uppercase tracking-[0.2em] text-primary/80 font-display">A little love book</h2>
-<h1 class="text-5xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-100 to-white drop-shadow-sm pb-2">
-                                For Ruby <span class="text-3xl text-primary align-middle">💗</span>
-</h1>
-<div class="w-12 h-1 bg-primary/30 rounded-full mx-auto mt-6"></div>
-</div>
-<!-- Main Action -->
-<div class="pt-8 w-full px-4">
-<button class="w-full group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-lg bg-primary text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:shadow-primary/50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
-<span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]"></span>
-<span class="font-display font-medium text-lg tracking-wide mr-2">Open the book</span>
-<span class="material-icons-round text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</div>
-</div>
-</article>
-</div>
-</div>
-<!-- Footer: Navigation Hint -->
-<footer class="w-full py-6 flex flex-col items-center gap-2 opacity-60">
-<span class="text-xs uppercase tracking-widest font-light">Swipe to peek inside</span>
-<div class="animate-bounce mt-2">
-<span class="material-icons-round text-primary/80">keyboard_arrow_up</span>
-</div>
-</footer>
-</main>
-<!-- Tailwind Config Additions for Custom Animations -->
-<style>
-        @keyframes shimmer {
-            100% {
-                transform: translateX(100%);
-            }
-        }
-    </style>
-</body></html>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen relative overflow-hidden font-display flex flex-col items-center justify-center selection:bg-primary selection:text-white">
+  <!-- Ambient Background Effects -->
+  <div class="bokeh">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <!-- Background Gradient Overlay for Depth -->
+  <div class="fixed inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-primary/10 pointer-events-none z-0">
+  </div>
+  <!-- Main Content Container (Phone Frame) -->
+  <main class="w-full max-w-md h-full min-h-screen flex flex-col justify-between p-6 relative z-10">
+    <!-- Top Bar: Music Toggle -->
+    <header class="w-full flex justify-end pt-4 animate-fade-in-down">
+      <button
+        class="glass-panel group flex items-center gap-3 px-4 py-2 rounded-full hover:bg-white/5 transition-all duration-300">
+        <span class="text-xs font-medium tracking-wide opacity-80 group-hover:opacity-100 transition-opacity">Play a
+          song</span>
+        <div class="relative w-8 h-4 bg-slate-700/50 rounded-full transition-colors group-hover:bg-primary/30">
+          <div
+            class="absolute left-0 top-0 w-4 h-4 bg-primary rounded-full shadow-lg transform -translate-y-0 scale-110 flex items-center justify-center">
+            <span class="material-icons-round text-[10px] text-white animate-spin-slow">music_note</span>
+          </div>
+        </div>
+      </button>
+    </header>
+    <!-- Center: The "Book" -->
+    <div class="flex-1 flex items-center justify-center perspective-1000 py-8">
+      <div class="relative w-full aspect-[3/4] max-w-sm animate-float">
+        <!-- Glow behind book -->
+        <div class="absolute inset-4 bg-primary/20 blur-3xl rounded-full animate-pulse-slow"></div>
+        <!-- Book Card -->
+        <article
+          class="glass-panel w-full h-full rounded-xl flex flex-col items-center justify-center text-center p-8 relative overflow-hidden border-t border-l border-white/10 border-b border-r border-black/20 shadow-2xl ring-1 ring-white/5">
+          <!-- Decorative corner accents -->
+          <div class="absolute top-4 left-4 w-16 h-16 border-t border-l border-primary/20 rounded-tl-lg"></div>
+          <div class="absolute top-4 right-4 w-16 h-16 border-t border-r border-primary/20 rounded-tr-lg"></div>
+          <div class="absolute bottom-4 left-4 w-16 h-16 border-b border-l border-primary/20 rounded-bl-lg"></div>
+          <div class="absolute bottom-4 right-4 w-16 h-16 border-b border-r border-primary/20 rounded-br-lg"></div>
+          <!-- Book Spine Effect -->
+          <div class="absolute left-0 top-0 bottom-0 w-4 book-spine z-10 opacity-30"></div>
+          <!-- Content -->
+          <div class="relative z-20 flex flex-col items-center gap-8 w-full">
+            <!-- Image/Icon placeholder for cover art -->
+            <div
+              class="w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center border border-primary/10 mb-4 shadow-inner relative overflow-hidden">
+              <img alt="Abstract Romantic Texture"
+                class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+                data-alt="Abstract soft focus pink and purple romantic bokeh lights"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnTAMe39HXltTVH6458js4eIL87CT_9VcIDn6hecqOw2t7EjzmCctgiuUYhZ8Mz1sQ1FAaUGIbfRhS4YbtdxHRrog7ZnDdkFRv6Tl3KM2v_HD340Tb4jAFKxRzpuH8pzZKyHITB25m-rN52TYqjpW25vaQdfBNCXH5Y3dhSh7qAapGx-l1ceGnK1Lc4VAZSdNDX1-KsvRHUYYix1_N8XuRJm_6QiU5WnfUSu1SIoK1g2ayELAOjeXoX8aIQ6j8o2ijg7ISIbZyXcE" />
+              <span class="material-icons-round text-5xl text-primary/80 drop-shadow-lg relative z-10">favorite</span>
+            </div>
+            <!-- Titles -->
+            <div class="space-y-3">
+              <h2 class="text-sm uppercase tracking-[0.2em] text-primary/80 font-display">A little love book</h2>
+              <h1
+                class="text-5xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-100 to-white drop-shadow-sm pb-2">
+                For Ruby <span class="text-3xl text-primary align-middle">💗</span>
+              </h1>
+              <div class="w-12 h-1 bg-primary/30 rounded-full mx-auto mt-6"></div>
+            </div>
+            <!-- Main Action -->
+            <div class="pt-8 w-full px-4">
+              <button onclick="window.location.href='../photo_chapter_-_our_little_moments/code.html'"
+                class="w-full group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-lg bg-primary text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:shadow-primary/50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
+                <span
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]"></span>
+                <span class="font-display font-medium text-lg tracking-wide mr-2">Open the book</span>
+                <span
+                  class="material-icons-round text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Footer: Navigation Hint -->
+    <footer class="w-full py-6 flex flex-col items-center gap-2 opacity-60">
+      <span class="text-xs uppercase tracking-widest font-light">Swipe to peek inside</span>
+      <div class="animate-bounce mt-2">
+        <span class="material-icons-round text-primary/80">keyboard_arrow_up</span>
+      </div>
+    </footer>
+  </main>
+  <!-- Tailwind Config Additions for Custom Animations -->
+  <style>
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</body>
+
+</html>
